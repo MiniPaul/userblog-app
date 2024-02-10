@@ -1,8 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Loginpage = () => {
+
+    const navigate=useNavigate()
 
     const[input,setInput]=new useState(
         [
@@ -23,7 +25,7 @@ const Loginpage = () => {
           (response)=>{
               console.log(response.data)
               if (response.data.status=="success") {
-                  alert("Successfully login")
+                  navigate("/add")
                   setInput(
                     {
                         "email":"",
@@ -31,7 +33,11 @@ const Loginpage = () => {
                     }
                   )
               } else {
-                  alert("Something went wrong")
+                  if (response.data.status=="invalid user") {
+                    alert("Invalid Password")
+                  } else {
+                    alert("Invalid user")
+                  }
               }
           }
       )
