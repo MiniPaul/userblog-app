@@ -13,7 +13,7 @@ const SignupPage = () => {
                 "address":"",
                 "pincode":"",
                 "email":"",
-                "password":"",
+                "password":""
             }
         ]
     ) 
@@ -37,7 +37,7 @@ const SignupPage = () => {
                         "address":"",
                         "pincode":"",
                         "email":"",
-                        "password":"",
+                        "password":""
                     }
                   )
               } else {

@@ -7,12 +7,10 @@ const Loginpage = () => {
     const navigate=useNavigate()
 
     const[input,setInput]=new useState(
-        [
             {
                 "email":"",
                 "password":"",
             }
-        ]
     ) 
     
     const inputHandler=(event)=>{
@@ -25,11 +23,17 @@ const Loginpage = () => {
           (response)=>{
               console.log(response.data)
               if (response.data.status=="success") {
-                  navigate("/add")
-                  setInput(
+
+                console.log(response.data.userData._id)
+
+                sessionStorage.setItem("userid",response.data.userData._id)
+                
+                navigate("/add")
+
+                setInput(
                     {
                         "email":"",
-                        "password":"",
+                        "password":""
                     }
                   )
               } else {
@@ -67,7 +71,6 @@ const Loginpage = () => {
                 </div>
             </div>
         </div>
-
     </div>
   )
 }
