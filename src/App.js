@@ -5,6 +5,7 @@ import Loginpage from './Components/Loginpage';
 import SignupPage from './Components/SignupPage';
 import AddPost from './Components/AddPost';
 import ViewPost from './Components/ViewPost';
+import ViewmyPost from './Components/ViewmyPost';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signup" element={<SignupPage/>}/>
         <Route path="/add" element={<AddPost/>}/>
         <Route path="/viewall" element={<ViewPost/>}/>
+        <Route path="/mypost" element={<ViewmyPost/>}/>
       </Routes>
       </BrowserRouter>
     </div>
