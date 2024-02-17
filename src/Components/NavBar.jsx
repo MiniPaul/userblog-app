@@ -33,7 +33,10 @@ const NavBar = () => {
           <a className="nav-link active" aria-current="page" href="/add">Add Post</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">View all post</a>
+          <a className="nav-link" href="/mypost">View my post</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/viewall">View all post</a>
         </li>
         <li className="nav-item">
           <span className="nav-link" onClick={logOutAction}>Logout</span>
